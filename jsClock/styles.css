@@ -1,14 +1,12 @@
 html {
-  background:#fc8196 url('https://images.unsplash.com/photo-1503455637927-730bce8583c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
-  background-size:cover;
-  font-family:'helvetica neue';
+  background: orange;
+  font-family: 'Arial';
   text-align: center;
   font-size: 10px;
 }
 
 body {
   margin: 0;
-  font-size: 2rem;
   display:flex;
   flex:1;
   min-height: 100vh;
@@ -18,16 +16,26 @@ body {
 .clock {
   width: 35rem;
   height: 35rem;
-  border: .5rem solid white;
-  border-radius:50%;
+  border: 5px solid white;
+  border-radius: 50%;
   margin:50px auto;
   position: relative;
   padding:2rem;
-  box-shadow:
-    0 0 0 3px rgba(0,0,0,0.1),
-    inset 0 0 0 3px #EFEFEF,
-    inset 0 0 10px black,
-    0 0 10px rgba(0,0,0,0.2);
+  box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+.center {
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 17.3rem;
+  z-index: 1;
 }
 
 .clock-face {
@@ -35,11 +43,12 @@ body {
   width: 100%;
   height: 100%;
   transform: translateY(-3px);
+  /* transform: translateX(-10px); */
 }
 
 .hand {
   width:50%;
-  height:6px;
+  height: 3px;
   background:black;
   position: absolute;
   top:50%;
@@ -49,10 +58,40 @@ body {
   /* transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); */
 }
 
-.hour-hand {
-  background-color: blue;
+.hour-hand, .min-hand {
+  background-color: black;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.second-hand {
+  position: absolute;
+  height: 90px;
+  width: 2px;
+  margin: auto;
+  top: -26%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 4px;
+  background: #FF4B3E;
+  transform-origin: bottom center;
+  transform: rotate(180deg);
+  
 }
 
 .min-hand {
-  background-color: aqua;
+  background-color: black;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.timing {
+  font-size: 4.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.37);
 }
