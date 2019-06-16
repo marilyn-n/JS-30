@@ -1,13 +1,19 @@
 :root {
   --base: #ffc600;
   --spacing: 1rem;
-  --blur: .8rem;
+  --blur: 0;
+  --radius: 0;
+  --brightness: 20%;
+  --contrast: 20%;
+  --saturate: 2;
+  --grayscale: 20%;
 }
 
 img {
   padding: var(--spacing);
   background: var(--base);
   filter: blur(var(--blur));
+  border-radius: var(--radius);
   max-width: 100%;
   height: auto;
 }
