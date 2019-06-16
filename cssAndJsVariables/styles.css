@@ -1,5 +1,5 @@
 :root {
-  --base: pink;
+  --base: #ffc600;
   --spacing: 1rem;
   --blur: .8rem;
 }
@@ -12,17 +12,46 @@ img {
 
 body {
   text-align: center;
-  background: #193549;
+  /* background: #193549; */
   color: white;
   font-family: 'helvetica neue', sans-serif;
   font-weight: 100;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .controls {
+  position: fixed;
+  right: 0;
   margin-bottom: 50px;
+  background: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  width: 14rem;
 }
 
 input {
   width:100px;
+}
+
+.container {
+  display: flex;
+}
+
+label {
+  display: block;
+}
+
+ul {
+  padding-left: 0px;
+  margin-bottom: 0px;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+ul > li {
+  list-style: none;
+}
+
+.graphic {
+  margin-left: 5.5rem;
+  margin-top: 4rem;
 }
