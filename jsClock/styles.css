@@ -62,7 +62,18 @@ body {
   background-color: black;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
 }
-
+/*  */
+.hour-hand {
+  background:black;
+  position: absolute;
+  width: 40%;
+  margin: auto;
+  top: 0;
+  left: 34px;
+  bottom: 0;
+  border-radius: 4px;
+}
+/*  */
 .second-hand {
   position: absolute;
   height: 90px;
