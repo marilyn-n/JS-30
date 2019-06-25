@@ -24,7 +24,7 @@
                     'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin',
                     'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose',
                     'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine',
-                    'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'
+                    'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William', 'Michael, Zoe'
                     ];
     
     // Array.prototype.filter()
@@ -72,17 +72,23 @@
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
     
     // 7. sort Exercise
     // Sort the people alphabetically by last name
 
-    const alphabeticalNames = people.map(name => {
-      const person = name.split(' ');
-      let lastName = person[1];
-      // console.log(lastName);
-      
-    });
-
+   function sortByLastName(peopleArr) {
+     
+     const names = peopleArr.map((name) => {
+       let fullName = name.split(',');
+       let lastName = fullName[1];
+       return lastName
+     })
+     
+     console.log(names.sort());
+     
+   }
+   sortByLastName(people);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
