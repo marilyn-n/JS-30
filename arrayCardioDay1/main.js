@@ -85,7 +85,7 @@
        return lastName
      })
      
-     console.log(names.sort());
+     console.table(names.sort());
      
    }
    sortByLastName(people);
@@ -94,4 +94,16 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+    const instancesCounter = data.reduce((list, item) => {
+      if (!list[item]) {
+        list[item] = 1;
+      } else {
+        list[item]++;
+      }
+      return list
+     
+    }, {});
+
+    console.log(instancesCounter);
+    
   
