@@ -18,6 +18,10 @@ img {
   height: auto;
 }
 
+.brightness {
+  filter: brightness(var(--brightness));
+}
+
 body {
   text-align: center;
   /* background: #193549; */
