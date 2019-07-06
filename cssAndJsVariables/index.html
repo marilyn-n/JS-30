@@ -11,7 +11,7 @@
   <div class="container">
   
     <div class="graphic">
-      <img src="https://source.unsplash.com/7bwQXzbF6KE/600x350">
+      <img class="" src="https://source.unsplash.com/7bwQXzbF6KE/600x350">
     </div>
 
     <div class="controls">
@@ -33,9 +33,9 @@
 
         <li>
             <label id="opacity">Opacity</label>
-            <button value="0.2">0.2</button>
-            <button value="0.4">0.4</button>
-            <button value="1">1</button>
+            <button class="opacity-level" value="1">1</button>
+            <button class="opacity-level" value="0.2">0.2</button>
+            <button class="opacity-level" value="0.4">0.4</button>
         </li>
 
         <li>
@@ -44,23 +44,26 @@
         </li>
 
         <li>
-            <label for="brightness">Brightness</label>
-            <input id="brightness" type="range" name="brightness" min="10" max="100" value="10" data-sizing="%">
+          <label for="brightness">Brightness</label>
+          <button class="bright-level" value="1">1</button>
+          <button class="bright-level" value="1.75">1.75</button>
+          <button class="bright-level" value="50" data-sizing="%">50%</button>
+          <button class="bright-level" value="0">0</button>
         </li>
 
         <li>
             <label for="contrast">Contrast</label>
-            <input id="contrast" type="range" name="contrast" min="10" max="100" value="10" data-sizing="%">
+            <input id="contrast" type="range" name="contrast" min="0" max="100" value="100" data-sizing="%">
         </li>
 
         <li>
             <label for="saturate">Saturate</label>
-            <input id="saturate" type="range" name="saturate" min="5" max="40" value="10">
+            <input id="saturate" type="range" name="saturate" min="0" max="40" value="100">
         </li>
 
         <li>
             <label for="grayscale">Grayscale</label>
-            <input id="grayscale" type="range" name="grayscale" min="5" max="40" value="10" data-sizing="%">
+            <input id="grayscale" type="range" name="grayscale" min="0" max="100" value="100" data-sizing="%">
         </li>
 
     </ul>

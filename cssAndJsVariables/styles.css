@@ -3,10 +3,10 @@
   --spacing: 1rem;
   --blur: 0;
   --radius: 0;
-  --brightness: 20%;
-  --contrast: 20%;
+  --brightness: 100%;
+  --contrast: 100%;
   --saturate: 2;
-  --grayscale: 20%;
+  --grayscale: 100%;
 }
 
 img {
@@ -20,6 +20,18 @@ img {
 
 .brightness {
   filter: brightness(var(--brightness));
+}
+
+.contrast {
+  filter: contrast(var(--contrast));
+}
+
+.saturate {
+  filter: saturate(var(--saturate));
+}
+
+.grayscale {
+  filter: grayscale(var(--grayscale));
 }
 
 body {
