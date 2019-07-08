@@ -1,8 +1,15 @@
 const panels = document.querySelectorAll('.panel');
 
 function toggleOpen() {
-  console.log(this);
   this.classList.toggle('open');
 }
 
-[...panels].map(item => item.addEventListener('click', toggleOpen))
+function toggleActive(e) {
+  console.log(e.propertyName);
+  if (e.propertyName.includes('flex')) {
+    this.classList.toggle('open-active')
+  }
+}
+
+[...panels].map(item => item.addEventListener('click', toggleOpen));
+[...panels].map(item => item.addEventListener('transitionend', toggleActive));
