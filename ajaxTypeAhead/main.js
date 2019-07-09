@@ -8,17 +8,18 @@ fetch(endpoint)
 function findMatches(wordToMatch, cities) {
   return cities.filter(place => {
     const regex = new RegExp(wordToMatch, 'gi');
-    return place.city.match(regex) || place.state.match(regex);
+    return place.city.match(regex) || place.state.match(regex) ;
   })
 }
 
 function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function displayMatches() {
   const matchArr = findMatches(this.value, cities)
-  const html = matchArr.map(place => {
+
+    const html = matchArr.map(place => {
     const regex = new RegExp(this.value, 'gi');
     const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
     const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
@@ -29,7 +30,20 @@ function displayMatches() {
     </li>
     `
   }).join('');
-  suggestions.innerHTML = html;
+
+  const nothingFound = 
+    ` 
+    <li>
+      <span>Your search - ${this.value} - did not match any places</span>
+    </li> 
+    `;
+
+  if (!html) {
+      suggestions.innerHTML = nothingFound
+  } else {
+      suggestions.innerHTML = html;
+  }
+  
 };
 
 const searchInput = document.querySelector('.search');
