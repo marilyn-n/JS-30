@@ -9,7 +9,24 @@ function findMatches(wordToMatch, cities) {
   return cities.filter(place => {
     const regex = new RegExp(wordToMatch, 'gi');
     return place.city.match(regex) || place.state.match(regex);
-
   })
 }
 
+function displayMatches() {
+  const matchArr = findMatches(this.value, cities)
+  const html = matchArr.map(place => 
+  `
+  <li>
+    <span class="name">${place.city}, ${place.state}</span>
+    <span class="population">${place.population}</span>
+  </li>
+  `
+  ).join('');
+  suggestions.innerHTML = html;
+};
+
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions'); 
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
