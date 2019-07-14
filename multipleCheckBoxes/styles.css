@@ -53,11 +53,10 @@ span {
   font-weight: 200;
 }
 
-.deleteBtn {
+.btn {
   height: 4rem;
   width: 4rem;
   border-radius: 50%;
-  background-color: #ff0000;
   color: white;
   font-size: 1.25rem;
   position: fixed;
@@ -69,6 +68,38 @@ span {
   z-index: 1;
 }
 
-.deleteBtn:hover {
+.red {
+  background-color: #ff0000;
+}
+
+.blue {
+  background-color: #4c6ef5;
+}
+
+.btn.blue {
+  bottom: 4.5rem;
+}
+
+.d-none {
+  display: none;
+}
+
+ul > li.dropdown-item {
+  width: 8rem;
+  background-color: white;
+}
+
+.dropdown {
+  position: absolute;
+  bottom: 5rem;
+  right: 6rem;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+ul > li.dropdown-item:hover {
+  background-color: #D1E2FF;
+}
+
+.delete:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
