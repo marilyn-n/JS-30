@@ -1,4 +1,5 @@
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const deleteBtn = document.querySelector('.deleteBtn');
 
 let lastChecked;
 
@@ -10,7 +11,7 @@ function handleCheck(e) {
   if (e.shiftKey && this.checked) {
   // loop over every single checkbox
     [...checkboxes].map(checkbox => {
-      
+
       if (checkbox === this || checkbox === lastChecked) {
         inBetween = !inBetween;
       }
@@ -19,11 +20,20 @@ function handleCheck(e) {
         checkbox.checked = true;
       }
       
-    })
+      
+    });
     
   }
 
   lastChecked = this;
 }
 
+const deleteItem = () => {
+  const checkboxes = document.querySelectorAll('input:checked');
+  [...checkboxes].map(item => {
+    item.parentElement.remove();
+  });
+};
+
 [...checkboxes].map(checkbox => checkbox.addEventListener('click', handleCheck))
+deleteBtn.addEventListener('click', deleteItem);
