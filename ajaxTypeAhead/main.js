@@ -39,9 +39,9 @@ function displayMatches() {
     `;
 
   if (!html) {
-      suggestions.innerHTML = nothingFound
+    suggestions.innerHTML = nothingFound;
   } else {
-      suggestions.innerHTML = html;
+    suggestions.innerHTML = html;
   }
   
 };
