@@ -53,8 +53,9 @@ const unselectAllHandler = () => {
   toogleHandler();
 }
 
+// $('#drop-options .dropdown-icon').removeClass('fas fa-check text-blue');
+// $(this).children('.dropdown-icon').addClass('fas fa-check text-blue');
 
-[...checkboxes].map(checkbox => checkbox.addEventListener('click', handleCheck))
 deleteBtn.addEventListener('click', deleteItem);
 selectBtn.addEventListener('click', toogleHandler);
 selectAll.addEventListener('click', selectAllHandler);
