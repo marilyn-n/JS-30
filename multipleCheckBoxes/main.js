@@ -1,6 +1,8 @@
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 const deleteBtn = document.querySelector('.deleteBtn');
 const selectBtn = document.querySelector('.selectBtn');
+const selectAll = document.querySelector('.select-all');
+const unselect = document.querySelector('.unselect-all');
 
 let lastChecked;
 
@@ -41,6 +43,19 @@ const toogleHandler = () => {
 }
 
 
+const selectAllHandler = () => {
+  [...checkboxes].map(check => check.checked = true);
+  toogleHandler();
+}
+
+const unselectAllHandler = () => {
+  [...checkboxes].map(check => check.checked = false);
+  toogleHandler();
+}
+
+
 [...checkboxes].map(checkbox => checkbox.addEventListener('click', handleCheck))
 deleteBtn.addEventListener('click', deleteItem);
 selectBtn.addEventListener('click', toogleHandler);
+selectAll.addEventListener('click', selectAllHandler);
+unselect.addEventListener('click', unselectAllHandler);
