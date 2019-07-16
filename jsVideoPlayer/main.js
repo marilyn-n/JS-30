@@ -26,6 +26,11 @@ function volumeAndPlaybackRate() {
   video[this.name] = this.value;
 }
 
+function progress() {
+  const percentage = (video.currentTime / video.duration) * 100;
+  progressBar.style.flexBasis = `${percentage}%`;
+}
+
 // hook up the event listeners
 
 video.addEventListener('click', togglePlay);
@@ -35,3 +40,4 @@ toggle.addEventListener('click', togglePlay);
 [...skipButtons].map(button => button.addEventListener('click', skip));
 [...ranges].map(range => range.addEventListener('change', volumeAndPlaybackRate));
 [...ranges].map(range => range.addEventListener('mousemove', volumeAndPlaybackRate));
+video.addEventListener('timeupdate', progress);
