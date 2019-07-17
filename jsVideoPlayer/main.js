@@ -7,7 +7,6 @@ const skipButtons = document.querySelectorAll('[data-skip]');
 const ranges = document.querySelectorAll('.player__slider');
 const fullScreen = document.querySelector('.full-screen');
 
-
 // Build out functions
 
 const togglePlay = () => {
@@ -37,7 +36,7 @@ const scrub = (e) => {
   video.currentTime = scrubTime;
 }
 
-function openFullscreen() {
+const openFullscreen = () => {
   if (video.requestFullscreen) {
     video.requestFullscreen();
   } else if (video.mozRequestFullScreen) { /* Firefox */
@@ -46,6 +45,13 @@ function openFullscreen() {
     video.webkitRequestFullscreen();
   } else if (video.msRequestFullscreen) { /* IE/Edge */
     video.msRequestFullscreen();
+  }
+}
+
+function handleVideoKeys(e) {
+  const key = e.keyCode;
+  if (key === 32) {
+    togglePlay();
   }
 }
 
@@ -66,3 +72,4 @@ progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
 progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown = false);
 fullScreen.addEventListener('click', openFullscreen);
+window.addEventListener('keydown', handleVideoKeys);
