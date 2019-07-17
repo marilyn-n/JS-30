@@ -105,6 +105,16 @@ body {
   border-bottom-right-radius: 8%;
 }
 
+.volume {
+  position: absolute;
+  height: 10rem;
+  width: 10rem;
+  background-color: #0707076c;
+  border-radius: 10%;
+  font-size: 3rem;
+  padding: 3rem 3.75rem;
+}
+
 /* unholy css to style input type="range" */
 
 input[type=range] {
@@ -161,4 +171,8 @@ input[type=range]::-moz-range-thumb {
 button:hover {
   background-color: rgba(255, 255, 255, 0.53);
   color: black;
+}
+
+.d-none {
+  display: none;
 }

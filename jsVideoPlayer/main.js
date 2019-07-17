@@ -6,6 +6,8 @@ const toggle = document.querySelector('.toggle');
 const skipButtons = document.querySelectorAll('[data-skip]');
 const ranges = document.querySelectorAll('.player__slider');
 const fullScreen = document.querySelector('.full-screen');
+const volumeRange = document.querySelector('input[name="volume"]');
+const volume = document.querySelector('.volume');
 
 // Build out functions
 
@@ -73,3 +75,11 @@ progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown = false);
 fullScreen.addEventListener('click', openFullscreen);
 window.addEventListener('keydown', handleVideoKeys);
+
+volumeRange.addEventListener('mousedown', function () {
+  volume.classList.remove('d-none');
+});
+
+volumeRange.addEventListener('mouseleave', function () {
+  volume.classList.add('d-none');
+});
