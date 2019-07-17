@@ -1,6 +1,6 @@
 const player = document.querySelector('.player');
 const video = document.querySelector('.viewer');
-const progrss = document.querySelector('.progress');
+const progress = document.querySelector('.progress');
 const progressBar = document.querySelector('.progress__filled');
 const toggle = document.querySelector('.toggle');
 const skipButtons = document.querySelectorAll('[data-skip]');
@@ -26,11 +26,15 @@ function volumeAndPlaybackRate() {
   video[this.name] = this.value;
 }
 
-function progress() {
+function handleProgress() {
   const percentage = (video.currentTime / video.duration) * 100;
   progressBar.style.flexBasis = `${percentage}%`;
 }
 
+function scrub(e) {
+  const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = scrubTime;
+}
 // hook up the event listeners
 
 video.addEventListener('click', togglePlay);
@@ -40,4 +44,10 @@ toggle.addEventListener('click', togglePlay);
 [...skipButtons].map(button => button.addEventListener('click', skip));
 [...ranges].map(range => range.addEventListener('change', volumeAndPlaybackRate));
 [...ranges].map(range => range.addEventListener('mousemove', volumeAndPlaybackRate));
-video.addEventListener('timeupdate', progress);
+video.addEventListener('timeupdate', handleProgress);
+
+let mousedown = false;
+progress.addEventListener('click', scrub);
+progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
+progress.addEventListener('mousedown', () => mousedown = true);
+progress.addEventListener('mouseup', () => mousedown = false);
