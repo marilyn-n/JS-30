@@ -6,7 +6,7 @@ const items = JSON.parse(localStorage.getItem('items')) || [];
 
 function addItem(e) {
     e.preventDefault();
-    const text = this.querySelector('input[name="item"]').value;
+    const text = document.querySelector('input[name="item"]').value;
     const item = {
         text,
         done: false
@@ -18,8 +18,7 @@ function addItem(e) {
     this.reset();
 }
 
-
-function populateList(plates = [], platesList) {
+const populateList = (plates = [], platesList) => {
     platesList.innerHTML = plates.map((plate, i) => {
         return `
             <li>
@@ -31,8 +30,7 @@ function populateList(plates = [], platesList) {
 
 }
 
-
-function toggleDone(e) {
+const toggleDone = (e) => {
     if (!e.target.matches('input')) return; // skip this unless it's an input
     const el = e.target;
     const index = el.dataset.index;
@@ -63,6 +61,8 @@ const unCheckAll = () => {
     localStorage.setItem('items', JSON.stringify(items));
     populateList(items, itemsList);
 }
+
+// hool up events
 
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
