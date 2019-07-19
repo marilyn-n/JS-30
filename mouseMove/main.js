@@ -2,16 +2,9 @@ const hero = document.querySelector('.hero');
 const text = hero.querySelector('h1');
 const walk = 100; // 100px
 
-const shadow = (e) => {
-    const {
-        offsetWidth: width,
-        offsetHeght: height
-    } = hero;
-
-    let {
-        offsetX: x,
-        offsetY: y
-    } = e; // get cursor position
+function shadow(e) {
+    const { offsetWidth: width, offsetHeight: height } = hero;
+    let { offsetX: x, offsetY: y } = e; // get cursor position
 
     if (this !== e.target) {
         x = x + e.target.offsetLeft;
