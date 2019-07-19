@@ -1,5 +1,7 @@
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
+const btnCheckAll = document.querySelector('.check-all');
+const btnUnCheckAll = document.querySelector('.uncheck-all');
 const items = JSON.parse(localStorage.getItem('items')) || [];
 
 function addItem(e) {
@@ -40,7 +42,32 @@ function toggleDone(e) {
     populateList(items, itemsList);
 }
 
+const checkAll = () => {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    [...checkboxes].map(checkbox => {
+        const index = checkbox.dataset.index;
+        items[index].done = true;
+    });
+
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList);
+}
+
+const unCheckAll = () => {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    [...checkboxes].map(checkbox => {
+        const index = checkbox.dataset.index;
+        items[index].done = false;
+    });
+
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList);
+}
+
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
+btnCheckAll.addEventListener('click', checkAll);
+btnUnCheckAll.addEventListener('click', unCheckAll);
+
 
 populateList(items, itemsList);
