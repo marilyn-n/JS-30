@@ -51,6 +51,10 @@
             'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper',
             'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'
         ];
+
+        const strip = (bandName) => bandName.replace(/^(a |the |an)/i, '').trim();
+
+        bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
     </script>
 
 </body>
