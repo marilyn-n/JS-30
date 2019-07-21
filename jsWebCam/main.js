@@ -26,3 +26,11 @@ const painToCanvas = () => {
         ctx.drawImage(video, 0, 0, width, height);
     }, 16);
 }
+
+const takePhoto = () => {
+    // play sound
+    snap.currentTime = 0;
+    snap.play()
+}
+
+video.addEventListener('canplay', painToCanvas);
