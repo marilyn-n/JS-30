@@ -5,7 +5,7 @@ const strip = document.querySelector('.strip');
 const snap = document.querySelector('.snap');
 
 
-function getVideo() {
+const getVideo = () => {
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
         .then(localMediaStream => {
             video.srcObject = localMediaStream;
@@ -15,3 +15,14 @@ function getVideo() {
 }
 
 getVideo();
+
+
+const painToCanvas = () => {
+    const width = video.videoWidth;
+    const height = video.videoHeight;
+    canvas.width = width;
+    canvas.height = height;
+    return setInterval(() => {
+        ctx.drawImage(video, 0, 0, width, height);
+    }, 16);
+}
