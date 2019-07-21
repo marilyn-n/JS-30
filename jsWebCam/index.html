@@ -9,9 +9,6 @@
 
 <body>
     <div class="controls">
-        <button onClick="takePhoto()"> 
-			📸
-		</button>
         <div class="rgb">
             <label for="rmin">Red Min:</label>
             <input type="range" min=0 max=255 name="rmin">
@@ -29,9 +26,11 @@
             <input type="range" min=0 max=255 name="bmax">
         </div>
     </div>
+
     <div class="photobooth">
         <canvas class="photo"></canvas>
         <video class="player" src=""></video>
+        <button onClick="takePhoto()"> 📸</button>
     </div>
     <div class="strip"></div>
     <audio class="snap" src="http://wesbos.com/demos/photobooth/snap.mp3" hidden></audio>
