@@ -10,7 +10,7 @@ html {
 
 html {
     font-size: 10px;
-    background: #ffc600;
+    background: #E91E63;
 }
 
 .photobooth {
@@ -39,6 +39,21 @@ html {
     top: 20px;
     right: 20px;
     width: 200px;
+}
+
+button {
+    height: 5.5rem;
+    width: 5.5rem;
+    border-radius: 50%;
+    color: black;
+    font-size: 2.35rem;
+    position: fixed;
+    margin: 1rem;
+    outline: none;
+    cursor: pointer;
+    z-index: 1;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.46);
 }
 
 
