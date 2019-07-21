@@ -30,7 +30,15 @@ const painToCanvas = () => {
 const takePhoto = () => {
     // play sound
     snap.currentTime = 0;
-    snap.play()
+    snap.play();
+
+    // take data out of the canvas
+    const data = canvas.toDataURL('image/jpeg');
+    const link = document.createElement('a');
+    link.href = data;
+    link.setAttribute('download', 'photo');
+    link.innerHTML = `<img src="${data}" alt="pic">`;
+    strip.insertBefore(link, strip.firstChild);
 }
 
 video.addEventListener('canplay', painToCanvas);
