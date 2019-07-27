@@ -5,13 +5,12 @@ const options = document.querySelectorAll('[type="range"], [name="text"]');
 const speakButton = document.querySelector('#speak');
 const stopButton = document.querySelector('#stop');
 msg.text = document.querySelector('[name="text"]').value;
-console.log(msg.text);
 
 function populateVoices() {
     voices = this.getVoices();
-    voicesDropdown.innerHTML = voices.map(voice =>
-        ` <option value="${voice.name}">${voice.name}(${voice.lang})</option>`
-    ).join('');
+    voicesDropdown.innerHTML = voices
+        .filter(item => item.lang.includes('en'))
+        .map(voice => ` <option value="${voice.name}">${voice.name}(${voice.lang})</option>`).join('');
 
 }
 
