@@ -27,5 +27,12 @@ function toggle(startOver = true) {
     }
 }
 
+function setOption() {
+    msg[this.name] = this.value;
+    toggle();
+
+}
+
 speechSynthesis.addEventListener('voiceschanged', populateVoices);
 voicesDropdown.addEventListener('change', setVoice);
+[...options].map(option => option.addEventListener('change', setOption))
