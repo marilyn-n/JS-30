@@ -3,7 +3,7 @@ const timerDisplay = document.querySelector('.display__time-left');
 const endTime = document.querySelector('.display__end-time');
 const time = document.querySelectorAll('[data-time]');
 
-function timer(seconds) {
+const timer = (seconds) => {
     // clear any existing timers
     clearInterval(conuntdown);
     const now = Date.now();
@@ -24,7 +24,7 @@ function timer(seconds) {
 
 }
 
-function displayTimeLeft(seconds) {
+const displayTimeLeft = (seconds) => {
     const minutes = Math.floor(seconds / 60)
     const remainSeconds = seconds % 60;
     const display = `${minutes}:${remainSeconds}`
@@ -33,7 +33,7 @@ function displayTimeLeft(seconds) {
 
 }
 
-function displayEndTime(timestamp) {
+const displayEndTime = (timestamp) => {
     const end = new Date(timestamp);
     const hour = end.getHours();
     const minutes = end.getMinutes();
